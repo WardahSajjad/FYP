@@ -1,0 +1,39 @@
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    color: #000000;
+    padding: 0 10%;
+    background-color: #ffffff;
+    /* or any background color you prefer */
+}
+
+.simulator-description-text,
+.vr-headset-image {
+    width: 50%;
+}
+
+.vr-headset-image img {
+    max-width: 100%;
+    display: block;
+}
+
+.simulator-description-text,
+.vr-headset-image {
+    opacity: 0;
+    transform: translateX(-200px);
+    /* For text */
+}
+
+.vr-headset-image {
+    transform: translate(200px, -200px);
+    /* For image */
+}
+
+.desc-btn {
+    background-color: #5e0303;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-left: 1%;
+
+}

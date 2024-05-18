@@ -1,0 +1,111 @@
+.question-container {
+    text-align: center;
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.option-container {
+
+    width: 150px;
+    /* Fixed size for all image containers */
+
+    /* Fixed size to ensure uniformity */
+    border: 2px solid transparent;
+    /* For highlighting */
+    border-radius: 8px;
+    overflow: hidden;
+    /* Keep image within the rounded corners */
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.option-container img {
+
+    object-fit: cover;
+    /* Maintain aspect ratio */
+}
+
+.option-container.selected {
+    border-color: #007bff;
+    /* Highlight color for selected option */
+}
+
+button {
+    margin-top: 20px;
+}
+
+.next-btn {
+    padding: 10px 40px;
+    background-color: #001933;
+    /* Primary blue color */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    /* Rounded corners */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s, transform 0.2s;
+    /* Smooth transition for hover effects */
+}
+
+.next-btn:hover {
+    background-color: #0056b3;
+    /* Darker shade of blue on hover */
+    transform: translateY(-2px);
+    /* Slight lift effect on hover */
+}
+
+.next-btn:disabled {
+    background-color: #cccccc;
+    /* Gray color when the button is disabled */
+    cursor: not-allowed;
+}
+
+.quiz-container {
+
+    display: flex;
+    align-items: flex-start;
+    /* Align items at the start of the flex container */
+    justify-content: center;
+    /* Center them horizontally */
+    gap: 20px;
+    /* Space between sidebar and main content */
+    padding: 4rem;
+    min-height: 48vh;
+    /* Ensure full viewport height */
+
+
+}
+
+.main-content-quiz-page {
+
+    /* Take remaining space */
+    background-color: #ffffff;
+    /* White background for the content area */
+    border-radius: 20px;
+    /* Rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    padding: 2rem;
+    /* Padding around the content area */
+    margin: 2rem;
+    /* Margin around the content area */
+    overflow: auto;
+    /* Enable scrolling for content if needed */
+}
+
+.page-container {
+    display: flex;
+    height: 90vh;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}

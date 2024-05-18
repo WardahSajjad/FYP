@@ -1,0 +1,62 @@
+.features-section {
+    text-align: center;
+    padding: 10px;
+    min-height: 80vh;
+    background-color: #ffffff;
+    /* Dark background for contrast */
+    color: #ffffff;
+    /* Light text for the heading */
+}
+
+.features-heading {
+    font-family: 'Anton', sans-serif;
+    size: 5%;
+    color: #5e0303;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px rgba(234, 209, 209, 0.75);
+    font-style: italic;
+    transform: skew(-7deg);
+
+    margin-bottom: 5%;
+
+}
+
+.features-grid {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: 4%;
+
+}
+
+.feature {
+    background-color: #000000;
+    /* Slightly lighter for the feature box */
+    /* padding-top: 9%; */
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 300px;
+    max-width: 300px;
+    /* Minimum width for each box */
+    /* max-width: 500px; */
+    /* Maximum width to prevent boxes from being too wide */
+    min-height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s ease-out;
+    /* Adds depth */
+    /* margin: auto; */
+    /* Center each feature box */
+}
+
+.feature:hover {
+    background-color: #4a1b1b;
+    /* Darker shade on hover */
+    transform: scale(1.1) !important;
+    /* Scale up to 110% */
+    cursor: pointer;
+}
+
+.feature p {
+    padding-top: 8%;
+}

@@ -1,0 +1,80 @@
+/* Sidebar with icons */
+.sidebar {
+    width: 230px;
+    /* Fixed width for the sidebar */
+    height: 90vh;
+    /* Take full height of parent container */
+    background-color: #050020;
+    /* Dark shade for the sidebar */
+    border-radius: 20px;
+    /* Rounded corners */
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    padding: 2rem;
+    padding-bottom: 0rem;
+    /* Padding around the content area */
+    margin: 1rem;
+    /* Margin around the content area */
+    margin-top: 2.5rem;
+    overflow-y: auto;
+    /* Enable vertical scrolling for sidebar if needed */
+    display: flex;
+    /* Change to flex display */
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: flex-start;
+}
+
+.sidebar-item {
+    display: flex;
+    /* Change to flex display */
+    align-items: center;
+    /* Align items vertically */
+    margin-bottom: 2rem;
+    /* Adjust margin between items */
+    padding-top: 2rem;
+    color: white;
+}
+
+.sidebar-text:hover {
+    color: #590606;
+    /* Color change on hover */
+    transform: translateY(-2px);
+    /* Move icon up slightly on hover */
+    transition: all 0.3s ease;
+    /* Smooth transition effect */
+    cursor: pointer;
+
+
+}
+
+/* Individual icon styling */
+.sidebar-icon {
+    color: #ecf0f1;
+    /* Light color for the icons */
+    font-size: 1rem;
+    /* Icon size */
+    margin-right: 1rem;
+    /* Adjust margin between icon and name */
+}
+
+.sidebar-icon:hover {
+    color: #002449;
+    /* Color change on hover */
+    transform: translateY(-2px);
+    /* Move icon up slightly on hover */
+    transition: all 0.3s ease;
+    /* Smooth transition effect */
+    cursor: pointer;
+
+}
+
+.side-name:hover {
+
+    font-size: 1.3rem;
+
+}
+
+.user-icon {
+    font-size: 1.5rem;
+}

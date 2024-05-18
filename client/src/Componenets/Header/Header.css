@@ -1,0 +1,97 @@
+.container {
+
+    padding-left: 30px;
+    padding-right: -1%;
+    padding-top: 0px;
+    margin-left: 30px;
+
+}
+
+/* Ensuring the navbar background is truly black */
+.navbar.bg-dark,
+.navbar-dark .bg-dark {
+    background-color: #000 !important;
+    border-bottom: 1px solid white;
+    /* Using hexadecimal code for black */
+    padding: 3rem;
+}
+
+
+
+/* Navbar content styles */
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-toggler {
+    color: white !important;
+
+    /* Ensuring text and toggler icon are white */
+}
+
+.navbar-brand {
+    padding-left: 0px;
+
+
+}
+
+.logo {
+    width: 120px;
+    /* Fixed width for the logo */
+    height: auto;
+    /* Maintain aspect ratio */
+    padding-top: 2px;
+    margin-right: 80% !important;
+
+
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+
+    /* Adjusting padding for better spacing */
+    padding: 0.5rem 1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #830606 !important;
+    /* Light grey color for hover state */
+
+}
+
+/* Toggler icon color adjustment for better visibility */
+.navbar-dark .navbar-toggler-icon {
+    filter: invert(1) brightness(2);
+    /* Making sure the toggler icon is clearly visible */
+}
+
+/* Dropdown menu adjustments for a consistent look */
+.navbar-dark .dropdown-menu {
+    background-color: #000 !important;
+    /* Black background for dropdown */
+}
+
+.navbar-dark .dropdown-item {
+    color: white !important;
+    /* White text for dropdown items */
+}
+
+.navbar-dark .dropdown-item:hover,
+.navbar-dark .dropdown-item:focus {
+    background-color: #222 !important;
+    /* Slightly lighter black for hover/focus state */
+}
+
+/* Custom class for login icon adjustment */
+.nav-icon {
+    color: white;
+    margin-left: 2rem;
+}
+
+.ms-auto {
+    margin-left: 10rem;
+    padding-left: 30px;
+    padding-right: -1%;
+    padding-top: 0px;
+}

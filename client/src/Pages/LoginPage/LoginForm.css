@@ -1,0 +1,87 @@
+/* .login-background {
+    background: url('/images/backgroundImage.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+
+.login-form-container {
+    background: rgba(19, 73, 182, 0.2);
+    /* Semi-transparent white */
+    backdrop-filter: blur(10px);
+    /* For supported browsers */
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    /* or your preferred max-width */
+    margin: auto;
+}
+
+.login-form-container h2 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    color: #555;
+}
+
+.form-control {
+    background-color: #eee;
+    border: none;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 1px solid #007bff;
+}
+
+.btn-primary {
+    background-color: #002449;
+    border: none;
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.nav-link {
+    color: #007bff;
+    text-align: center;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #0056b3;
+}
+
+.social-login-options .btn {
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.social-login-options .btn-primary {
+    background-color: #3b5998;
+    /* Facebook color */
+}
+
+.social-login-options .btn-danger {
+    background-color: #dd4b39;
+    /* Google color */
+}
+
+.text-danger {
+    color: #dd4b39;
+}

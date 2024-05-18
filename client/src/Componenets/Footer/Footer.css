@@ -1,0 +1,46 @@
+.footer {
+    background-color: #000000 !important;
+    /* Ensure true black background */
+    color: white;
+    border-top: 1px solid white;
+    /* Optional: adds a thin white top border for style */
+
+
+}
+
+.text-center p {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 1px;
+
+
+}
+
+
+.footer a {
+    color: white;
+    margin: 0 5px;
+    margin-top: 9%;
+}
+
+.footer a:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer .icon {
+    color: white;
+    /* margin: 0 10px; */
+    margin-top: 9%;
+    padding-top: 1px;
+}
+
+.footer .icon:hover {
+    color: #ccc;
+    /* Change as per your preference */
+}
+
+.footer-cont {
+    margin-left: 6% !important;
+
+}

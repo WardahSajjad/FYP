@@ -1,0 +1,28 @@
+.newsletter-section {
+    background-color: #f8f9fa;
+    /* Light background color */
+    padding: 40px 0;
+    /* Top and bottom padding */
+
+}
+
+.newsletter-section h2 {
+    margin-bottom: 20px;
+    /* Space below the heading */
+}
+
+.newsletter-section p {
+    margin-bottom: 30px;
+    /* Space above the form */
+}
+
+.newsletter-section form {
+    max-width: 400px;
+    /* Maximum width of the form */
+    margin: auto;
+    /* Center the form horizontally */
+}
+
+.news-form {
+    margin-left: 6% !important;
+}
