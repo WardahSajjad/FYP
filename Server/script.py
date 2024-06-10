@@ -77,10 +77,17 @@ def generate_question_and_options(available_options):
     }
 
 def insert_questions_into_db(n):
+    questions = []
     for _ in range(n):
         question_data = generate_question_and_options(options_info)
-        quiz_collection.insert_one(question_data)
-        print(f"Inserted question: {question_data['questionText']}")
+        questions.append(question_data)
+        print(f"Prepared question: {question_data['questionText']}")
+    
+    # Insert all questions at once
+    if questions:
+        quiz_collection.insert_many(questions)
+        print(f"Inserted {len(questions)} questions into the database.")
+
 
 # Example: Insert 15 random questions into the database
 insert_questions_into_db(15)

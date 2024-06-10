@@ -45,11 +45,8 @@ const Header = () => {
                     <Nav className="ms-auto">
                         <Link to="/" className="nav-link">Home</Link>
                         <a className="nav-link" onClick={goToFeatures} style={{ cursor: 'pointer' }}>Features</a>
-                        <Link to="/pricing" className="nav-link">Pricing</Link>
+                        <Link to="/dashboard" className="nav-link">Dashboard</Link>
                         <Link to="/about" className="nav-link">About</Link>
-                        {/* <Link to="/login" className="nav-link">
-                            <FontAwesomeIcon icon={faSignInAlt} className="nav-icon" /> Login
-                        </Link> */}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

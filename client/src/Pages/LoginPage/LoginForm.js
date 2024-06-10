@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { Navigate, useHistory } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Container, Form, Button, Row, Col, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import backgroundImage from '../../Assets/images/backgroundImage.png';
 import { useUser } from '../../CustomHooks/UserContext';
 import './LoginForm.css';
-
 
 function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [credentialsError, setCrentialsError] = useState("");
     const { setUser } = useUser();
     const navigate = useNavigate();
@@ -31,17 +31,21 @@ function LoginForm() {
             .then(data => {
                 if (data.code === 0) {
                     alert('Login successful');
-                    setUser({ username: username, email: email, token: data.token })
+                    setUser({ username: username, email: email, token: data.token });
                     navigate('/dashboard');
                 } else if (data.code === 1) {
                     setCrentialsError("Invalid credentials");
-                }
-                else {
+                } else {
                     setCrentialsError(data.msg);
                 }
             })
             .catch(error => console.error('Error:', error));
     };
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
     const backgroundStyle = {
         background: `url(${backgroundImage}) no-repeat center center fixed`,
         backgroundSize: 'cover',
@@ -50,7 +54,6 @@ function LoginForm() {
         alignItems: 'center',
         justifyContent: 'center',
     };
-
 
     return (
         <div className="login-background" style={backgroundStyle}>
@@ -78,26 +81,29 @@ function LoginForm() {
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
                                 />
-
                             </Form.Group>
-
                             <Form.Group controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control
-                                    type="password"
-                                    placeholder="Password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required
-                                />
-                                {
-                                    credentialsError &&
+                                <div className="password-input-container">
+                                    <Form.Control
+                                        type={showPassword ? "text" : "password"}
+                                        placeholder="Password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        required
+                                    />
+                                    <FontAwesomeIcon
+                                        icon={showPassword ? faEyeSlash : faEye}
+                                        onClick={togglePasswordVisibility}
+                                        className="password-toggle-icon"
+                                    />
+                                </div>
+                                {credentialsError && (
                                     <Form.Text className="text-danger">
                                         {credentialsError}
                                     </Form.Text>
-                                }
+                                )}
                             </Form.Group>
-
                             <Button variant="primary" type="submit" className="w-100 mt-4">
                                 Login
                             </Button>
@@ -113,7 +119,6 @@ function LoginForm() {
                                     <Link to="/forgot-password" className="nav-link">Forgot Password?</Link>
                                 </Nav.Item>
                             </Nav>
-
                             <div className="social-login-options text-center">
                                 <Button variant="primary" className="mr-2">
                                     <FontAwesomeIcon icon={faFacebookF} /> Facebook

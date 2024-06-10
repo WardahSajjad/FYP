@@ -5,6 +5,7 @@ import { Container, Form, Button, Row, Col, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import backgroundImage from '../../Assets/images/backgroundImage.png';
 import './CreateAccountForm.css';
 
@@ -13,6 +14,8 @@ function CreateAccountForm() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [passwordError, setPasswordError] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
+
 
     const navigate = useNavigate();
 
@@ -49,6 +52,9 @@ function CreateAccountForm() {
                 console.error('Error:', error);
                 setPasswordError("An error occurred while creating the account.");
             });
+    };
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
     };
     const backgroundStyle = {
         background: `url(${backgroundImage}) no-repeat center center fixed`,
@@ -111,13 +117,23 @@ function CreateAccountForm() {
 
                             <Form.Group controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control
-                                    type="password"
-                                    placeholder="Password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required
-                                />
+                                <div className="password-input-container">
+                                    <Form.Control
+                                        type={showPassword ? "text" : "password"}
+                                        placeholder="Password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        required
+                                    />
+                                    <FontAwesomeIcon
+                                        icon={showPassword ? faEyeSlash : faEye}
+                                        onClick={togglePasswordVisibility}
+                                        className="password-toggle-icon"
+                                    />
+                                </div>
+
+
+
                                 {passwordError && <div className="error-message">{passwordError}</div>}
 
                             </Form.Group>
