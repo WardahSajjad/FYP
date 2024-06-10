@@ -1,18 +1,24 @@
 pipeline {
     agent any
     
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerCredentials-101')
+        CLIENT_IMAGE = 'wardasajjad/zendrive-client-hub'
+        SERVER_IMAGE = 'wardasajjad/zendrive-server-hub'
+    }
+    
     stages {
         stage('Build Docker Images') {
             steps {
                 script {
                     // Build client Docker image
                     dir('client') {
-                        docker.build('wardasajjad/zendrive-client-hub', '.')
+                        docker.build("$CLIENT_IMAGE", '.')
                     }
                     
                     // Build server Docker image
                     dir('server') {
-                        docker.build('wardasajjad/zendrive-server-hub', '.')
+                        docker.build("$SERVER_IMAGE", '.')
                     }
                 }
             }
@@ -21,19 +27,15 @@ pipeline {
         stage('Push Docker Images') {
             steps {
                 script {
-                    // Push client Docker image
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_credentials') {
-                        docker.image('wardasajjad/zendrive-client').push()
-                    }
-                    
-                    // Push server Docker image
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_credentials') {
-                        docker.image('wardasajjad/zendrive-server').push()
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerCredentials-101') {
+                        // Push client Docker image
+                        docker.image("$CLIENT_IMAGE").push()
+                        
+                        // Push server Docker image
+                        docker.image("$SERVER_IMAGE").push()
                     }
                 }
             }
         }
     }
 }
-
-//changed the name again
